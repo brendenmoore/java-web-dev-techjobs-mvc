@@ -10,6 +10,10 @@ th {
     text-align: center;
 }
 
+.th-list th {
+    text-align: left;
+}
+
 td {
     vertical-align: top;
 }
