@@ -20,6 +20,7 @@ public class SearchController {
     @RequestMapping(value = "")
     public String search(Model model) {
         model.addAttribute("columns", columnChoices);
+        model.addAttribute("searchType", "all");
         return "search";
     }
 
@@ -33,6 +34,7 @@ public class SearchController {
             model.addAttribute("jobs", JobData.findByColumnAndValue(searchType, searchTerm));
         }
         model.addAttribute("columns", columnChoices);
+        model.addAttribute("searchType", searchType);
         return "search";
     }
 }

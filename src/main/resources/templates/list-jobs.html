@@ -10,22 +10,7 @@
 
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
-    <table class="table">
-        <tr class="th-list">
-            <th>Job Name</th>
-            <th>Employer</th>
-            <th>Location</th>
-            <th>Position Type</th>
-            <th>Skills</th>
-        </tr>
-        <tr th:each="job : ${jobs}">
-           <td th:text="${job.name}"></td>
-           <td th:text="${job.employer}"></td>
-           <td th:text="${job.location}"></td>
-           <td th:text="${job.positionType}"></td>
-           <td th:text="${job.coreCompetency}"></td>
-        </tr>
-    </table>
+    <table th:replace="fragments :: job-table"></table>
 
 </div>
 
