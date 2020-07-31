@@ -37,10 +37,18 @@
         </tr>
         <tr th:each="job : ${jobs}">
             <td th:text="${job.name}"></td>
-            <td th:text="${job.employer}"></td>
-            <td th:text="${job.location}"></td>
-            <td th:text="${job.positionType}"></td>
-            <td th:text="${job.coreCompetency}"></td>
+            <td>
+                <a th:text="${job.employer}" th:href="@{/list/jobs(column=employer,value=${job.employer})}"></a>
+            </td>
+            <td>
+                <a th:text="${job.location}" th:href="@{/list/jobs(column=location,value=${job.location})}"></a>
+            </td>
+            <td>
+                <a th:text="${job.positionType}" th:href="@{/list/jobs(column=positionType,value=${job.positionType})}"></a>
+            </td>
+            <td>
+                <a th:text="${job.coreCompetency}" th:href="@{/list/jobs(column=coreCompetency,value=${job.coreCompetency})}"></a>
+            </td>
         </tr>
     </table>
 
